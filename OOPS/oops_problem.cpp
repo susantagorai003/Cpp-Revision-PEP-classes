@@ -43,6 +43,9 @@ class StudentRecord {
             }
             cout << endl;
         }
+        void totalStudentCount() {
+            cout << "Total Students Enrolled: " << totalStudents << endl;
+        }
 
         ~StudentRecord() {
             delete[] grades;
@@ -54,9 +57,12 @@ int main() {
     StudentRecord student1("Alice", 3);
     student1.setGrades(grades1);
     student1.displayInfo();
+    student1.totalStudentCount();
 
     StudentRecord student2 = student1;
     student2.displayInfo();
+    student2.totalStudentCount();
+
 
     return 0;
 }
