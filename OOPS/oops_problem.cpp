@@ -29,6 +29,13 @@ class StudentRecord {
                 grades[i] = other.grades[i];
             }
         }
+        StudentRecord operator+(const StudentRecord& other) {
+            StudentRecord temp = *this; 
+            for (int i = 0; i < subjectCount; i++) {
+                temp.grades[i] += other.grades[i];
+            }
+            return temp;
+        }
 
         void setGrades(float* newGrades) {
             for (int i = 0; i < subjectCount; i++) {
@@ -54,14 +61,24 @@ class StudentRecord {
 int StudentRecord::totalStudents = 0;
 int main() {
     float grades1[] = {85.5, 90.0, 78.5};
+
     StudentRecord student1("Alice", 3);
     student1.setGrades(grades1);
     student1.displayInfo();
     student1.totalStudentCount();
 
-    StudentRecord student2 = student1;
-    student2.displayInfo();
-    student2.totalStudentCount();
+    // StudentRecord student2 = student1;
+    // student2.displayInfo();
+    // student2.totalStudentCount();
+
+    float grades2[] = {88.0, 92.5, 80.0};
+    StudentRecord student3("Bob", 3);
+    student3.setGrades(grades2);
+    student3.displayInfo();
+    student3.totalStudentCount();
+
+    StudentRecord student4 = student1 + student3;
+    student4.displayInfo();
 
 
     return 0;
