@@ -23,6 +23,10 @@ class Point{
     {
         return Point(this->x - otherPoint.x, this->y - otherPoint.y);
     }
+    Point operator++()
+    {
+        return Point(this->x + 1, this->y + 1);
+    }
 
 };
 
@@ -38,6 +42,9 @@ int main() {
     Point s = p - q; // This will invoke the overloaded - operator
     s.print();
     
+    Point t = ++p; 
+    t.print();
+
     return 0;
     
     
