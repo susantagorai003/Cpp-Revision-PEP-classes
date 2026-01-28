@@ -23,9 +23,18 @@ class Point{
     {
         return Point(this->x - otherPoint.x, this->y - otherPoint.y);
     }
-    Point operator++()
+    Point& operator++()
     {
-        return Point(this->x + 1, this->y + 1);
+        this->x++;
+        this->y++;
+        return *this;
+    }
+    Point operator++(int)
+    {
+        Point temp(this->x,this->y);
+        this->x++;
+        this->y++;
+        return temp;
     }
 
 };
