@@ -30,12 +30,17 @@ class StudentRecord {
             }
         }
         StudentRecord operator+(const StudentRecord& other) {
-            StudentRecord temp = *this; 
-            for (int i = 0; i < subjectCount; i++) {
-                temp.grades[i] += other.grades[i];
+            StudentRecord temp(this->name + "&" + other.name, this->subjectCount + other.subjectCount);
+            temp.grades = new float[temp.subjectCount];
+            for (int i = 0; i < this->subjectCount; i++) {
+                temp.grades[i] = this->grades[i];
+            }
+            for (int i = 0; i < other.subjectCount; i++) {
+                temp.grades[this->subjectCount + i] = other.grades[i];
             }
             return temp;
         }
+       
 
         void setGrades(float* newGrades) {
             for (int i = 0; i < subjectCount; i++) {
