@@ -4,29 +4,40 @@
 #include <iostream>
 using namespace std;
 class Account {
+    
 
     public:
+    int balance;
+    int accoutnumber=23123;
     virtual void displayBalance()
     {
-        cout<<"Account Balance :"<<endl;
+        cout<<"Account Balance :"<<balance<<endl;
     }
 
 }; 
 class SavingsAccount : public Account{
 
     public:
+    SavingsAccount()
+    {
+        balance = 5000;
+    }
     void displayBalance() 
     {
-        cout<<"Savings Account Balance : 5000"<<endl;
+        cout<<"Savings Account Balance : "<<balance<<endl;
     }
 
 }; 
 
 class CurrentAccount : public Account {
     public:
+    CurrentAccount()
+    {
+        balance = 10000;
+    }
     void displayBalance()
     {
-        cout<<"Current Account Balance : 10000 "<<endl;
+        cout<<"Current Account Balance : "<<balance<<endl;
     }
 
 };
