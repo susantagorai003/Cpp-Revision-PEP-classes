@@ -37,15 +37,15 @@ class Point{
         return temp;
     }
 
-    Point operator==(Point &otherPoint)
+    bool operator==(Point &otherPoint)
     {
-        return Point(this->x == otherPoint.x, this->y == otherPoint.y);
+        return (this->x == otherPoint.x && this->y == otherPoint.y);
     }
 
-    Point operator!=(Point &otherPoint)
+    bool operator!=(Point &otherPoint)
     {
-        return Point(this->x != otherPoint.x, this->y != otherPoint.y);
-    }
+        return !(*this == otherPoint);
+    }   
 
 
     int getX() {
@@ -98,10 +98,25 @@ int main() {
     // cout << p1 << endl;
 
 
-    Point p2(1,20);
+    Point p2(10,20);
     Point p3(10,20);
-    Point res = p2 == p3;
-    res.print();
+    if(p2==p3)
+    {
+        cout<<"Points are equal"<<endl;
+    }
+    else
+    {
+        cout<<"Points are not equal"<<endl;
+    }
+
+    //  if(p2!=p3)
+    // {
+    //     cout<<"Points are not equal"<<endl;
+    // }
+    // else
+    // {
+    //     cout<<"Points are equal"<<endl;
+    // }
     
 
 
