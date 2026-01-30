@@ -10,7 +10,7 @@
 using namespace std;
 class Payment{
     public:
-    virtual void pay()=0; // pure virtual function
+    virtual void pay()=0;
 };
 class GooglePay : public Payment{
     private:
