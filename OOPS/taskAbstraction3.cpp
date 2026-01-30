@@ -52,7 +52,14 @@ class Mage: public Hero{
     void castSpell()
     {
         cout << "Casting Fireball!" << endl;
-        mana -= 10;
+        if(mana >= 10)
+        {
+            mana -= 10;
+        }
+        else
+        {
+            cout << "Not enough mana to cast Fireball!" << endl;
+        }
     }
 
 };
@@ -60,7 +67,7 @@ class Mage: public Hero{
 int main()
 {
     Warrior w("Thor", 100,20);
-    Mage m("Loki", 60, 50);
+    // Mage m("Loki", 60, 50);
 
     w.display();
     w.takeDamage(30);
