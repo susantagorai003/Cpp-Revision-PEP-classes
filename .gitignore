@@ -3,13 +3,4 @@
 *.out
 *.app
 
-# Object files
-*.o
-*.obj
 
-# Debug files
-*.log
-
-# IDE folders
-.vscode/
-.idea/

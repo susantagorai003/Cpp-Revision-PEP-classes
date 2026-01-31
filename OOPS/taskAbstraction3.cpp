@@ -21,7 +21,7 @@ class Hero{
     }
 };
 
-class Warrior : public Hero{
+class Warrior : virtual public Hero{
     private:
         int armor;
     public:
@@ -40,7 +40,7 @@ class Warrior : public Hero{
 
 };
 
-class Mage: public Hero{
+    class Mage: virtual public Hero{
     private:
         int mana;
     public:
@@ -62,6 +62,17 @@ class Mage: public Hero{
         }
     }
 
+};
+
+class WarriorMage : public Warrior, public Mage{
+    public:
+    WarriorMage(string name, int health, int armor, int mana) 
+    : Hero(name, health), Warrior(name, health, armor), Mage(name, health, mana)
+    {
+        cout<<"Warrior-Mage "<<name<<" is ready for both battle and magic"<<endl;
+    }
+    
+    
 };
 
 int main()
