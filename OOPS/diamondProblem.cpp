@@ -19,11 +19,13 @@ class D: public B, public C{
     
 };
 int main(){
-    D obj;
+    // D obj;
     //obj.Print(); // Error: request for member 'Print' is ambiguous
     // obj.B::Print(); // Resolving ambiguity by specifying the path
     // obj.C::Print(); // Resolving ambiguity by specifying the path
-    obj.Print();
+    // obj.Print();
+    A* obj = new D();
+    obj->Print(); // No ambiguity now
 
     return 0;
 }

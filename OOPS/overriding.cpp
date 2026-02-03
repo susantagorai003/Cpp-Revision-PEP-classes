@@ -46,9 +46,9 @@ int main() {
 
     Player* newplayer = new newPlayer;
 
-    newplayer->display();
+    // newplayer->display();
 
-    // entity_ptr->display(); // 
+    entity_ptr->display(); // 
 
 
 
