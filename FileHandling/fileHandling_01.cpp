@@ -10,8 +10,9 @@ int main()
         return -1;
     }
     string s;
-    file>>s;
-    cout<<"Content of file is: "<<s<<endl;
+    while(getline(file,s)){
+        cout<<s<<endl;
+    }
     file.close();
     return 0;
 }
