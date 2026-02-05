@@ -5,12 +5,16 @@ int main()
 {
     fstream file("example2.txt",ios::in | ios::out | ios::app);
     string word;
-    for(int i=0;i<10;i++)
+    while(word != "STOP")
     {
-        cout<<"Enter word: ";
-        getline(cin, word);
-        file<<word<<endl;
+        cout << "Enter a STOP to end: ";
+        cin >> word;
+        if(word != "STOP")
+        {
+            file << word << " ";
+        }
     }
+   
     file.seekg(0);
     file.clear(); 
     file.close();
